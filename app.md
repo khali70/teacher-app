@@ -105,3 +105,21 @@ export default function App() {
   );
 }
 ```
+
+# comments section
+
+- [ ] user img
+- [ ] comment as card with some updates
+- [ ] how to change background color `lighten,darken`
+- [ ] add new comment
+  - [ ] add bar section
+  - [ ] input with burder redius
+  - [ ] send
+
+# Q&A
+
+- [ ] card with collapsible header
+
+# rating star
+
+# loading youtube video

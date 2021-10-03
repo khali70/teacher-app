@@ -1,14 +1,14 @@
 {
   "expo": {
-    "name": "learning",
-    "slug": "learning",
+    "name": "Coures_App",
+    "slug": "coures_app",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#abb8c3"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
@@ -22,11 +22,12 @@
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#FFFFFF"
+        "backgroundColor": "#abb8c3"
       }
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "description": "this is a prototype app for courses app using youtube as video Data Base"
   }
 }

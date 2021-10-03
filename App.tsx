@@ -1,21 +1,59 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-
-export default function App() {
+import React from "react";
+import "react-native-gesture-handler";
+import * as eva from "@eva-design/eva";
+import {
+  ApplicationProvider,
+  Icon,
+  IconRegistry,
+  Layout,
+  Text,
+  useTheme,
+} from "@ui-kitten/components";
+import { EvaIconsPack } from "@ui-kitten/eva-icons";
+import Video from "./screens/Video";
+import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
+import { StatusBar } from "expo-status-bar";
+const Main = () => {
+  const theme = useTheme();
+  // theme["text-basic-color"]
+  // theme['background-basic-color-1']
+  const { Navigator, Screen } = createStackNavigator();
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <Navigator
+        screenOptions={{
+          headerTintColor: theme["text-basic-color"],
+          headerStyle: {
+            backgroundColor: theme["background-basic-color-2"],
+          },
+          headerRight: () => (
+            <Icon
+              style={{
+                width: 32,
+                height: 32,
+                backgroundColor: theme["background-basic-color-1"],
+                borderRadius: 50,
+                marginRight: 20,
+              }}
+              fill={"#ccc"}
+              name="person"
+            />
+          ),
+        }}
+      >
+        <Screen name="Video" component={Video} />
+      </Navigator>
+    </NavigationContainer>
   );
-}
+};
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default () => (
+  <>
+    <IconRegistry icons={EvaIconsPack} />
+    <ApplicationProvider {...eva} theme={eva["light"]}>
+      <StatusBar style="inverted" />
+      <Main />
+    </ApplicationProvider>
+  </>
+);
